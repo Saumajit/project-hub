@@ -10,7 +10,7 @@ Save all the four files in the same directory.
 Step 1 : Run makemodel1.py 
          On successful completion,it will show "Saved model!"
          
-STep 2 : Run loadmodel1.py
+Step 2 : Run loadmodel1.py
          It will ask the user to input a sentence. Based on the input,the model will predict the sentiment and return the                 confidence as well as sentiment type of the input.
 
 
