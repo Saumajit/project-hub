@@ -34,6 +34,11 @@ model = model_from_json(loaded_model_json)
 # and weight your nodes with your saved values
 model.load_weights('model.h5')
 
+#plot of the model
+from keras.utils.vis_utils import plot_model
+plot_model(model, to_file='model.png')
+
+
 # okay here's the interactive parte
 while 1:
     evalSentence = raw_input('Input a sentence to be evaluated, or Enter to quit: ')
