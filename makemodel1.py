@@ -63,12 +63,15 @@ model.compile(loss='categorical_crossentropy',
     optimizer='adam',
     metrics=['accuracy'])
 
-model.fit(train_x, train_y,
-    batch_size=32,
-    epochs=5,
-    verbose=1,
-    validation_split=0.1,
-    shuffle=True)
+#create a graph of training and validation accuracy
+history=model.fit(train_x, train_y,batch_size=32,epochs=5,verbose=1,validation_split=0.1,shuffle=True)
+plt.plot(history.history['acc'])
+plt.plot(history.history['val_acc'])
+plt.title('model accuracy')
+plt.ylabel('accuracy')
+plt.xlabel('epoch')
+plt.legend(['train', 'validation'], loc='best')
+plt.show()
 
 model_json = model.to_json()
 with open('model.json', 'w') as json_file:
